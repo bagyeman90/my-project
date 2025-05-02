@@ -13,11 +13,11 @@ jobs:
   build-java:
 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        java-version: [ '11']
-        os: [ 'ubuntu-latest', 'macos-latest', 'windows-latest' ]
-    name: Build and Test on ${{ matrix.os }} with Java ${{ matrix.java-version }}
+    #strategy:
+    #  matrix:
+     #   java-version: [ '11']
+      #  os: [ 'ubuntu-latest', 'macos-latest', 'windows-latest' ]
+    #name: Build and Test on ${{ matrix.os }} with Java ${{ matrix.java-version }}
 
     steps:
     - uses: actions/checkout@v2
@@ -43,6 +43,4 @@ jobs:
     - name: Build and push
       uses: docker/build-push-action@v6
       with:
-        context: .
-        push: true
-        tags: user/app:latest
+        image: docker-hub-repo/image-name
