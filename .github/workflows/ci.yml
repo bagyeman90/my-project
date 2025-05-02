@@ -24,6 +24,7 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         
+    - name: Grant file permission    
       run: chmod u+x gradlew
     - name: Build with Gradle Wrapper
       run: ./gradlew build
